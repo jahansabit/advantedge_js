@@ -114,6 +114,11 @@
                         changeValue(inputField, text_to_input);
                     }
 
+                    inputField = document.querySelector('[name="subtitles"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                    }
+
                     counter++;
                     console.log(counter);
 
