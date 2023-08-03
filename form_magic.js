@@ -94,33 +94,45 @@
             label.addEventListener('click', function () {
                 // Get the label's text content
                 const text_to_input = label.textContent;
+                const survey_title = label.parentElement.parentElement.childNodes[0].textContent;
 
                 // Check if the input field exists and fill it up with a delay of 0.3 seconds
-                var timeoutId = setTimeout(function () {
-                    var inputField = document.querySelector('[name="accept_or_deny"]');
-                    if (inputField) {
-                        changeValue(inputField, text_to_input);
-                        clearTimeout(timeoutId);
+                var counter = 0;
+                var intervalId = setInterval(function () {
+                    if(survey_title.includes("finish the final delivery")){
+                        var inputField = document.querySelector('[name="accept_or_deny"]');
+                        if (inputField) {
+                            changeValue(inputField, text_to_input);
+                        }
+                    }
+                    
+                    if(survey_title.includes("approve this edit")){
+                        inputField = document.querySelector('[name="revision_or_approval"]');
+                        if (inputField) {
+                            changeValue(inputField, text_to_input);
+                        }
+                    }
+                    
+                    if(survey_title.includes("subtitles attached")){
+                        inputField = document.querySelector('[name="subtitles"]');
+                        if (inputField) {
+                            changeValue(inputField, text_to_input);
+                        }
+                    }
+                    
+                    if(survey_title.includes("project types")){
+                        inputField = document.querySelector('[name="proj_type"]');
+                        if (inputField) {
+                            changeValue(inputField, text_to_input);
+                        }
                     }
 
-                    inputField = document.querySelector('[name="revision_or_approval"]');
-                    if (inputField) {
-                        changeValue(inputField, text_to_input);
-                        clearTimeout(timeoutId);
+                    counter++;
+                    if (counter == 3) {
+                        clearInterval(intervalId);
                     }
-
-                    inputField = document.querySelector('[name="subtitles"]');
-                    if (inputField) {
-                        changeValue(inputField, text_to_input);
-                        clearTimeout(timeoutId);
-                    }
-
-                    inputField = document.querySelector('[name="proj_type"]');
-                    if (inputField) {
-                        changeValue(inputField, text_to_input);
-                        clearTimeout(timeoutId);
-                    }
-                }, 1000);
+                    
+                }, 500);
                 // Replace 'Some text' with the desired value
 
             });
