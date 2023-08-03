@@ -108,6 +108,12 @@
                         changeValue(inputField, text_to_input);
                     }
 
+                    var inputField = document.querySelector('[name="proj_type"]');
+                    if (inputField) {
+                        // inputField.value = text_to_input;
+                        changeValue(inputField, text_to_input);
+                    }
+
                 }, 500); // Replace 'Some text' with the desired value
 
             });
