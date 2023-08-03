@@ -51,7 +51,8 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         // Call the function to populate input fields on page load
-        populateInputFields();
+        setTimeout(populateInputFields, 1000);
+        // populateInputFields();
 
         // Retrieve the 'editors_name' value from localStorage
         var editorsName = localStorage.getItem('editors_name');
