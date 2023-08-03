@@ -96,34 +96,30 @@
                 const text_to_input = label.textContent;
 
                 // Check if the input field exists and fill it up with a delay of 0.3 seconds
-
-                setTimeout(function () {
+                var timeoutId = setTimeout(function () {
                     var inputField = document.querySelector('[name="accept_or_deny"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        clearTimeout(timeoutId);
                     }
 
                     inputField = document.querySelector('[name="revision_or_approval"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        clearTimeout(timeoutId);
                     }
 
                     inputField = document.querySelector('[name="subtitles"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        clearTimeout(timeoutId);
                     }
 
                     inputField = document.querySelector('[name="proj_type"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        clearTimeout(timeoutId);
                     }
-
-                    counter++;
-                    console.log(counter);
-
-                    // if (counter === 3) {
-                    //     clearInterval(intervalId);
-                    // }
                 }, 1000);
                 // Replace 'Some text' with the desired value
 
