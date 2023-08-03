@@ -1,4 +1,4 @@
-// Function to get URL parameters
+    // Function to get URL parameters
     function getUrlParameters() {
         var params = {};
         var url = window.location.href;
@@ -63,8 +63,9 @@
             if (editorsNameInput) {
                 // Autofill input fields with the 'editors_name' attribute value
                 // editorsNameInput.value = editorsName;
-                changeValue(editorsNameInput, editorsName);
-
+                setTimeout(function () {
+                    changeValue(editorsNameInput, editorsName);
+                }, 1000);
 
                 // Add an input event listener to the input field
                 editorsNameInput.addEventListener('input', function () {
@@ -129,6 +130,9 @@
             const placeholderFormat = dateInput.getAttribute('placeholder');
             const formattedDate = getCurrentFormattedDate(placeholderFormat);
             // dateInput.value = formattedDate;
-            changeValue(dateInput, formattedDate);
+            setTimeout(function () {
+                changeValue(dateInput, formattedDate);
+            }, 1000);
+            // changeValue(dateInput, formattedDate);
         }
     });
