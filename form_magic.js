@@ -36,16 +36,15 @@
         // Loop through each input element
         var sleep_time = 0;
         inputs.forEach(function (input) {
-            // sleep_time += 500;
-            sleep_time = 500;
-
             var placeholder = input.getAttribute('name');
             var value = params[placeholder];
-            // console.log(value)
 
             // If a value is found in the URL parameters, set it as the input's value
             if (value) {
-                changeValue(input, value.replaceAll("+", " "));
+                sleep_time += 100;
+                setTimeout(function () {
+                    changeValue(input, value.replaceAll("+", " "));
+                }, sleep_time);
             }
         });
     }
