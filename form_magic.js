@@ -90,6 +90,7 @@
 
         // Add click event listener to each label
         labels.forEach(function (label) {
+            console.log(label);
             label.addEventListener('click', function () {
                 // Get the label's text content
                 const text_to_input = label.textContent;
