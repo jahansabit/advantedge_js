@@ -114,6 +114,7 @@
                     }
 
                     counter++;
+                    console.log(counter);
 
                     if (counter === 3) {
                         clearInterval(intervalId);
