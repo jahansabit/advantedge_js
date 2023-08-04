@@ -96,22 +96,24 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(function () {
                 changeValue(emailInput, email);
             }, 1000);
-
-            // Add an input event listener to the input field
-            emailInput.addEventListener('input', function () {
-                // Get the updated value from the input field
-                const newValue = emailInput.value;
-
-                // Save the updated value to localStorage
-                localStorage.setItem('email', newValue);
-
-                // Optionally, you can also display a confirmation message
-                console.log('Data saved to localStorage:', newValue);
-            });
         }
     } else {
         // Handle the case where 'email' is not found in localStorage
         console.log('Email not found in localStorage.');
+    }
+
+    if (emailInput) {
+        // Add an input event listener to the input field
+        emailInput.addEventListener('input', function () {
+            // Get the updated value from the input field
+            const newValue = emailInput.value;
+
+            // Save the updated value to localStorage
+            localStorage.setItem('email', newValue);
+
+            // Optionally, you can also display a confirmation message
+            console.log('Data saved to localStorage:', newValue);
+        });
     }
 
 
@@ -123,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Get the label's text content
         const text_to_input = label.textContent;
         const survey_title = label.parentElement.parentElement.childNodes[0].textContent;
-        
+
         label.addEventListener('click', function () {
             // Check if the input field exists and fill it up with a delay of 0.3 seconds
             var counter = 0;
