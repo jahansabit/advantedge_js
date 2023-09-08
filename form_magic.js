@@ -152,36 +152,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // -------------- Retrieve the 'phone_number' value from localStorage
-    var phone_number = localStorage.getItem('phone_number');
-    var phone_numberInput = document.querySelector('[placeholder="Phone"]');
+    // need to add some waiting as the phone_number field is shown later
+    setTimeout(function () {
+        var phone_number = localStorage.getItem('phone_number');
+        var phone_numberInput = document.querySelector('[placeholder="Phone"]');
 
-    // Check if the value exists in localStorage
-    if (phone_number) {
-        if (phone_numberInput) {
-            // Autofill input fields with the 'editors_name' attribute value
-            // phone_numberInput.value = phone_number;
-            setTimeout(function () {
-                changeValue(phone_numberInput, phone_number);
-            }, 1000);
+        // Check if the value exists in localStorage
+        if (phone_number) {
+            if (phone_numberInput) {
+                // Autofill input fields with the 'editors_name' attribute value
+                // phone_numberInput.value = phone_number;
+                setTimeout(function () {
+                    changeValue(phone_numberInput, phone_number);
+                }, 1000);
+            }
+        } else {
+            // Handle the case where 'phone_number' is not found in localStorage
+            console.log('phone_number not found in localStorage.');
         }
-    } else {
-        // Handle the case where 'phone_number' is not found in localStorage
-        console.log('phone_number not found in localStorage.');
-    }
 
-    if (phone_numberInput) {
-        // Add an input event listener to the input field
-        phone_numberInput.addEventListener('input', function () {
-            // Get the updated value from the input field
-            const newValue = phone_numberInput.value;
+        if (phone_numberInput) {
+            // Add an input event listener to the input field
+            phone_numberInput.addEventListener('input', function () {
+                // Get the updated value from the input field
+                const newValue = phone_numberInput.value;
 
-            // Save the updated value to localStorage
-            localStorage.setItem('phone_number', newValue);
+                // Save the updated value to localStorage
+                localStorage.setItem('phone_number', newValue);
 
-            // Optionally, you can also display a confirmation message
-            console.log('Data saved to localStorage:', newValue);
-        });
-    }
+                // Optionally, you can also display a confirmation message
+                console.log('Data saved to localStorage:', newValue);
+            });
+        }
+    }, 1500);
 
 
     // Get all label tags that have the attribute 'for' and its value starts with 'answer'
@@ -210,6 +213,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (inputField) {
                         changeValue(inputField, text_to_input);
                         inputField.readOnly = true;
+                    }
+
+                    if(text_to_input.trim() === "YES"){
+                        inputField = document.querySelector('[name="loom_for_revision"]')
+                        if (inputField) {
+                            changeValue(inputField, "NONE");
+                        }
+                        inputField = document.querySelector('[name="additional_resources"]')
+                        if (inputField) {
+                            changeValue(inputField, "NONE");
+                        }
                     }
                 }
 
