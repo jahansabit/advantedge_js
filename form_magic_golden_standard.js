@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         setTimeout(function () {
                             changeValue(emailInput, email);
                             emailInput.readOnly = true;
-                        }, 1000);
+                        }, 600);
                     }
                 } else {
                     // Handle the case where 'email' is not found in localStorage
