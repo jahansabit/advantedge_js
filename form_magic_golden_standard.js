@@ -181,6 +181,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
 
+                // Retrieve the 'email' value from localStorage
+                var email = localStorage.getItem('gs-email');
+                var emailInput = document.querySelector('[name="email"]');
+
                 if (email) {
                     if (emailInput) {
                         // Autofill input fields with the 'editors_name' attribute value
