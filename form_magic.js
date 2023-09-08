@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(populateInputFields, 1000);
     // populateInputFields();
 
-    // Retrieve the 'editors_name' value from localStorage
+    // ----------------------- Retrieve the 'editors_name' value from localStorage
     var editorsName = localStorage.getItem('editors_name');
     var editorsNameInput = document.querySelector('[name="editors_name"]');
 
@@ -84,7 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Editor\'s Name not found in localStorage.');
     }
 
-    // Retrieve the 'email' value from localStorage
+    
+    // ---------------------- Retrieve the 'email' value from localStorage
     var email = localStorage.getItem('email');
     var emailInput = document.querySelector('[name="email"]');
 
@@ -110,6 +111,72 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Save the updated value to localStorage
             localStorage.setItem('email', newValue);
+
+            // Optionally, you can also display a confirmation message
+            console.log('Data saved to localStorage:', newValue);
+        });
+    }
+
+
+    // Retrieve the 'name' value from localStorage
+    var name = localStorage.getItem('name');
+    var nameInput = document.querySelector('[name="first_name"]');
+
+    // Check if the value exists in localStorage
+    if (name) {
+        if (nameInput) {
+            // Autofill input fields with the 'editors_name' attribute value
+            // nameInput.value = name;
+            setTimeout(function () {
+                changeValue(nameInput, name);
+            }, 1000);
+        }
+    } else {
+        // Handle the case where 'name' is not found in localStorage
+        console.log('name not found in localStorage.');
+    }
+
+    if (nameInput) {
+        // Add an input event listener to the input field
+        nameInput.addEventListener('input', function () {
+            // Get the updated value from the input field
+            const newValue = nameInput.value;
+
+            // Save the updated value to localStorage
+            localStorage.setItem('email', newValue);
+
+            // Optionally, you can also display a confirmation message
+            console.log('Data saved to localStorage:', newValue);
+        });
+    }
+
+
+    // -------------- Retrieve the 'phone_number' value from localStorage
+    var phone_number = localStorage.getItem('phone_number');
+    var phone_numberInput = document.querySelector('[placeholder="Phone"]');
+
+    // Check if the value exists in localStorage
+    if (phone_number) {
+        if (phone_numberInput) {
+            // Autofill input fields with the 'editors_name' attribute value
+            // phone_numberInput.value = phone_number;
+            setTimeout(function () {
+                changeValue(phone_numberInput, phone_number);
+            }, 1000);
+        }
+    } else {
+        // Handle the case where 'phone_number' is not found in localStorage
+        console.log('phone_number not found in localStorage.');
+    }
+
+    if (phone_numberInput) {
+        // Add an input event listener to the input field
+        phone_numberInput.addEventListener('input', function () {
+            // Get the updated value from the input field
+            const newValue = phone_numberInput.value;
+
+            // Save the updated value to localStorage
+            localStorage.setItem('phone_number', newValue);
 
             // Optionally, you can also display a confirmation message
             console.log('Data saved to localStorage:', newValue);
