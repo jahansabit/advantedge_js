@@ -134,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     var inputField = document.querySelector('[name="accept_or_deny"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
                     }
                 }
 
@@ -141,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     inputField = document.querySelector('[name="revision_or_approval"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
                     }
                 }
 
@@ -148,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     inputField = document.querySelector('[name="subtitles"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
                     }
                 }
 
@@ -155,6 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     inputField = document.querySelector('[name="proj_type"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
                     }
                 }
 
@@ -162,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     inputField = document.querySelector('[name="sifting"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
                     }
                 }
 
@@ -169,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     inputField = document.querySelector('[name="title_animations"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
                     }
                 }
 
@@ -176,6 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     inputField = document.querySelector('[name="title_animations_2"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
                     }
                 }
 
@@ -183,6 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     inputField = document.querySelector('[name="transitions"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
                     }
                 }
 
@@ -190,6 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     inputField = document.querySelector('[name="graphics_and_animations"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
                     }
                 }
 
@@ -197,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     inputField = document.querySelector('[name="fonts"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
                     }
                 }
 
@@ -204,6 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     inputField = document.querySelector('[name="short_form_captions"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
                     }
                 }
 
@@ -211,6 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     inputField = document.querySelector('[name="short_form_captions"]');
                     if (inputField) {
                         changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
                     }
                 }
 
