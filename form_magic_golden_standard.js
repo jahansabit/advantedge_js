@@ -58,19 +58,19 @@ document.addEventListener('DOMContentLoaded', function () {
     var emailInput = document.querySelector('[name="email"]');
 
     // Check if the value exists in localStorage
-    if (email) {
-        if (emailInput) {
-            // Autofill input fields with the 'editors_name' attribute value
-            // emailInput.value = email;
-            setTimeout(function () {
-                changeValue(emailInput, email);
-                emailInput.readOnly = true;
-            }, 1000);
-        }
-    } else {
-        // Handle the case where 'email' is not found in localStorage
-        console.log('Email not found in localStorage.');
-    }
+    // if (email) {
+    //     if (emailInput) {
+    //         // Autofill input fields with the 'editors_name' attribute value
+    //         // emailInput.value = email;
+    //         setTimeout(function () {
+    //             changeValue(emailInput, email);
+    //             emailInput.readOnly = true;
+    //         }, 1000);
+    //     }
+    // } else {
+    //     // Handle the case where 'email' is not found in localStorage
+    //     console.log('Email not found in localStorage.');
+    // }
 
     if (emailInput) {
         // Add an input event listener to the input field
