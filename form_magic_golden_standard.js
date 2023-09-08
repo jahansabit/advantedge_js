@@ -100,6 +100,70 @@ document.addEventListener('DOMContentLoaded', function () {
             // Check if the input field exists and fill it up with a delay of 0.3 seconds
             var counter = 0;
             var intervalId = setInterval(function () {
+
+                if (survey_title.toLowerCase().includes("videos to be sifted")) {
+                    inputField = document.querySelector('[name="sifting"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("style of title animation")) {
+                    inputField = document.querySelector('[name="title_animations"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("where do you prefer your title animations to show")) {
+                    inputField = document.querySelector('[name="title_animations_2"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("which transition")) {
+                    inputField = document.querySelector('[name="transitions"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("and animations where concepts")) {
+                    inputField = document.querySelector('[name="graphics_and_animations"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("which font")) {
+                    inputField = document.querySelector('[name="fonts"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("short form captions")) {
+                    inputField = document.querySelector('[name="short_form_captions"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("short form captions")) {
+                    inputField = document.querySelector('[name="short_form_captions"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
                 
                 if (survey_title.toLowerCase().includes("b-roll do you prefer to be")) {
                     inputField = document.querySelector('[name="b_roll"]');
