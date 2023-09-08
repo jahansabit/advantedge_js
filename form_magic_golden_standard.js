@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         inputField.readOnly = true;
                     }
                 }
-                
+
                 if (survey_title.toLowerCase().includes("b-roll do you prefer to be")) {
                     inputField = document.querySelector('[name="b_roll"]');
                     if (inputField) {
@@ -181,10 +181,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
 
-
-                inputField = document.querySelector('[name="email"]');
-                if (inputField) {
-                    changeValue(inputField, localStorage.getItem("gs-email") || "");
+                if (email) {
+                    if (emailInput) {
+                        // Autofill input fields with the 'editors_name' attribute value
+                        // emailInput.value = email;
+                        setTimeout(function () {
+                            changeValue(emailInput, email);
+                            emailInput.readOnly = true;
+                        }, 1000);
+                    }
+                } else {
+                    // Handle the case where 'email' is not found in localStorage
+                    console.log('Email not found in localStorage.');
                 }
 
                 counter++;
