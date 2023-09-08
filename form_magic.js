@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const newValue = nameInput.value;
 
             // Save the updated value to localStorage
-            localStorage.setItem('email', newValue);
+            localStorage.setItem('name', newValue);
 
             // Optionally, you can also display a confirmation message
             console.log('Data saved to localStorage:', newValue);
