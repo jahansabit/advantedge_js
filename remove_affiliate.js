@@ -6,4 +6,4 @@ var affiliate_interval = setInterval(function(){
     } catch(e) {
         console.log("not removed");
     }
-}, 100);
+}, 10);
