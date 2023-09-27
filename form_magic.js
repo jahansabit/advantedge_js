@@ -50,51 +50,6 @@ function populateInputFields() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-
-    // Get all label tags that have the attribute 'for' and its value starts with 'answer'
-    var initial_number_of_input_fields = document.querySelectorAll('input[type="text"]').length;
-    var initial_input_fields = [...document.querySelectorAll('input[type="text"]')];
-
-    const labels = document.querySelectorAll('label[for^="answer"]');
-
-    // Add click event listener to each label
-    labels.forEach(function (label) {
-        // Get the label's text content
-        const text_to_input = label.textContent;
-        const survey_title = label.parentElement.parentElement.childNodes[0].textContent;
-
-        label.addEventListener('click', function () {
-            // Check if the input field exists and fill it up with a delay of 0.3 seconds
-            var counter = 0;
-            var intervalId = setInterval(function () {
-                var current_number_of_input_fields = document.querySelectorAll('input[type="text"]').length;
-                var current_input_fields = [...document.querySelectorAll('input[type="text"]')];
-
-                // console.log(text_to_input, ini);
-
-                if (current_number_of_input_fields - initial_number_of_input_fields === 1) {
-                    for (var i = 0; i < current_input_fields.length; i++) {
-                        // if current_input_fields[i] not in initial_input_fields
-                        if (!initial_input_fields.includes(current_input_fields[i])) {
-                            changeValue(current_input_fields[i], text_to_input);
-                            initial_input_fields.push(current_input_fields[i]);
-                            initial_number_of_input_fields++;
-
-                            // check if input's value is changed
-                            if (current_input_fields[i].value === text_to_input) {
-                                console.log(survey_title, ': filled');
-                                clearInterval(intervalId);
-                            }
-                            else {
-                                console.log(survey_title, ': not filled');
-                            }
-                        }
-                    }
-                }
-            }, 100);
-        });
-    });
-
     // Call the function to populate input fields on page load
     setTimeout(populateInputFields, 1000);
     // populateInputFields();
@@ -129,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Editor\'s Name not found in localStorage.');
     }
 
-
+    
     // ---------------------- Retrieve the 'email' value from localStorage
     var email = localStorage.getItem('email');
     var emailInput = document.querySelector('[name="email"]');
@@ -230,6 +185,143 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }, 1500);
+
+
+    // Get all label tags that have the attribute 'for' and its value starts with 'answer'
+    const labels = document.querySelectorAll('label[for^="answer"]');
+
+    // Add click event listener to each label
+    labels.forEach(function (label) {
+        // Get the label's text content
+        const text_to_input = label.textContent;
+        const survey_title = label.parentElement.parentElement.childNodes[0].textContent;
+
+        label.addEventListener('click', function () {
+            // Check if the input field exists and fill it up with a delay of 0.3 seconds
+            var counter = 0;
+            var intervalId = setInterval(function () {
+                if (survey_title.includes("finish the final delivery")) {
+                    var inputField = document.querySelector('[name="accept_or_deny"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.includes("approve this edit")) {
+                    inputField = document.querySelector('[name="revision_or_approval"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+
+                    if(text_to_input.trim() === "YES"){
+                        inputField = document.querySelector('[name="loom_for_revision"]')
+                        if (inputField) {
+                            changeValue(inputField, "NONE");
+                        }
+                        inputField = document.querySelector('[name="additional_resources"]')
+                        if (inputField) {
+                            changeValue(inputField, "NONE");
+                        }
+                    }
+                }
+
+                if (survey_title.includes("subtitles attached")) {
+                    inputField = document.querySelector('[name="subtitles"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.includes("project types")) {
+                    inputField = document.querySelector('[name="proj_type"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("videos to be sifted")) {
+                    inputField = document.querySelector('[name="sifting"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("style of title animation")) {
+                    inputField = document.querySelector('[name="title_animations"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("where do you prefer your title animations to show")) {
+                    inputField = document.querySelector('[name="title_animations_2"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("which transition")) {
+                    inputField = document.querySelector('[name="transitions"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("and animations where concepts")) {
+                    inputField = document.querySelector('[name="graphics_and_animations"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("which font")) {
+                    inputField = document.querySelector('[name="fonts"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("short form captions")) {
+                    inputField = document.querySelector('[name="short_form_captions"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                if (survey_title.toLowerCase().includes("short form captions")) {
+                    inputField = document.querySelector('[name="short_form_captions"]');
+                    if (inputField) {
+                        changeValue(inputField, text_to_input);
+                        inputField.readOnly = true;
+                    }
+                }
+
+                inputField = document.querySelector('[name="email"]');
+                if (inputField) {
+                    changeValue(inputField, localStorage.getItem("email") || "");
+                }
+
+                counter++;
+                if (counter == 3) {
+                    clearInterval(intervalId);
+                }
+
+            }, 500);
+            // Replace 'Some text' with the desired value
+
+        });
+    });
 
     // If there is a date field, it should be autofilled
     function getCurrentFormattedDate(format) {
