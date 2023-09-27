@@ -23,6 +23,7 @@ labels.forEach(function (label) {
                     // if current_input_fields[i] not in initial_input_fields
                     if (!initial_input_fields.includes(current_input_fields[i])) {
                         changeValue(current_input_fields[i], text_to_input);
+                        current_input_fields[i].readOnly = true;
                         initial_input_fields.push(current_input_fields[i]);
                         initial_number_of_input_fields++;
                         
